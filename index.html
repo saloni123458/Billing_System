@@ -1,0 +1,537 @@
+<html>
+    <head>
+        <title>Billing</title>
+        <style>
+            .right{
+                text-align: right;
+            }
+            .left{
+                text-align: left;
+            }
+            .cente{
+                text-align: center;
+            }
+            .tpcn{
+                /* text-indent: 200px; */
+                vertical-align: text-top;
+                text-align: center;
+                font-size: 50px;
+                font-family: Verdana;
+                ;
+            }
+            table,tr,th{
+            border:1px solid black;
+            }
+            body{
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZo7RHx7JtvQUnoIEmQuDfo8nqYqJCCAEvQ&usqp=CAU");
+            }
+            .bord{
+                border:1px solid black;
+            }
+        </style>
+        
+    </head>
+    <body background="#bcd1e3">
+        <script src="Billjs.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+        <table  style="width: 100%;border: 2px solid black;">
+        <tr >
+            <td width= "150" colspan="1">
+                <img src="Mom luv logo.jpeg" alt="Mom's luv logo" style="width:100px;height:100px;border-radius: 5px;">
+            </td>
+            <td class="tpcn" colspan="5" >
+                <strong style="font-size: 80%;">Mom's luv</strong>
+                <br>
+                Baby Food Product's
+            </td>
+                
+        </tr>
+        <tr>
+            <td colspan="2">
+            </td>
+            <td colspan="3">
+                <center style="text-align: center;text-indent: right;">
+                <!-- <pre  ><h4> -->
+                    Registered office address<br>
+                    Yashovihar, Pawadewadi, Nanded, Maharashtra - 431602 <br>
+                    Contact no. :- <b>9067385519 </b>Email :- momsluv21@gmail.com<br></h4>
+                <!-- </pre> -->
+            </center>
+            </td>
+        </tr>
+        </table>
+        <table id="userdet" class="bord" style="width: 70%;margin-left:auto;margin-right:auto;">
+            <tr>
+        <div style="text-align: center;">
+        Bill To <input type="text" size="50">
+        </div>
+        </tr>
+            <tr style="border-top: rgb(55, 0, 255);">
+                <td colspan="2">
+                       
+                </td>
+                <td colspan="2">
+                        Invoice no. : 
+                        <input type="number" placeholder="Invoice no.">
+                </td>
+                <td colspan="2">
+                    Invoice date :
+                    <input type="date">
+                </td>
+                <td colspan="2">
+                    Due date :
+                    <input type="date">
+                </td>
+            </tr>    
+            </table>
+            <table id="userentrys" style="width: 100%;margin-left:auto;margin-right:auto;border: 2px solid black;text-align: center;"> <!--border:2px solid black;-->
+            <tr>
+                <td colspan="1" style="border-right: 2px solid black;">
+                    Sr.No.
+                </td> 
+                <td colspan="1">
+                    Items
+                </td>
+                <td colspan="1">
+                    Pkg
+                </td>
+                <td colspan="1">
+                    MRP
+                </td>
+                <td colspan="1">
+                    Exp
+                </td>
+                <td colspan="1">
+                    Rate
+                </td>
+                <td colspan="1">
+                    Quantity
+                </td>
+                <td colspan="1">
+                    Discount
+                </td>
+                <td colspan="1">
+                    Amount(Rs.)
+                </td>
+            </tr>
+        <!-- First row Details -->
+        <tr>
+            <td colspan="1" style="border-right: 2px solid black;">
+                1  
+            </td>
+            <td colspan="1" style="text-align: left;">
+                Jawar Khichidi
+            </td>
+            <td colspan="1">
+                <input id="pkg1" type="number">
+            </td>
+            <td colspan="1">
+                <input id="mrp1" type="number">
+            </td>
+            <td colspan="1">
+                <input id="exp1" type="date">
+            </td>
+            <td colspan="1">
+                <input id="rate1" type="number">
+            </td>
+            <td colspan="1">
+                <input id="qty1" type="number">
+            </td>
+            <td colspan="1">
+                <input id="Disk1" type="number"/>
+            </td>
+            <td>
+                <div id="tot1"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1"  style="border-right: 2px solid black;">
+                2  
+            </td>
+            <td colspan="1" style="text-align: left;">
+                Khichidi Mix
+            </td>
+            <td colspan="1">
+                <input id="pkg2" type="number">
+            </td>
+            <td colspan="1">
+                <input id="mrp2" type="number">
+            </td>
+            <td colspan="1">
+                <input id="exp2" type="date">
+            </td>
+            <td colspan="1">
+                <input id="rate2" type="number">
+            </td>
+            <td colspan="1">
+                <input id="qty2" type="number">
+            </td>
+            <td colspan="1">
+                <input id="Disk2" type="number">
+            </td>
+            <td>
+                <div id="tot2"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1"  style="border-right: 2px solid black;">
+                3  
+            </td>
+            <td colspan="1" style="text-align: left;">
+                Khichidi Mix
+            </td>
+            <td colspan="1">
+                <input id="pkg3" type="number">
+            </td>
+            <td colspan="1">
+                <input id="mrp3" type="number">
+            </td>
+            <td colspan="1">
+                <input id="exp3" type="date">
+            </td>
+            <td colspan="1">
+                <input id="rate3" type="number">
+            </td>
+            <td colspan="1">
+                <input id="qty3" type="number">
+            </td>
+            <td colspan="1">
+                <input id="Disk3" type="number">
+            </td>
+            <td>
+                <div id="tot3"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" style="border-right: 2px solid black;">
+                4  
+            </td>
+            <td colspan="1" style="text-align: left;">
+                Sprouted Multigrain With Almonds
+            </td>
+            <td colspan="1">
+                <input id="pkg4" type="number">
+            </td>
+            <td colspan="1">
+                <input id="mrp4" type="number">
+            </td>
+            <td colspan="1">
+                <input id="exp4" type="date">
+            </td>
+            <td colspan="1">
+                <input id="rate4" type="number">
+            </td>
+            <td colspan="1">
+                <input id="qty4" type="number">
+            </td>
+            <td colspan="1">
+                <input id="Disk4" type="number">
+            </td>
+            <td>
+                <div id="tot4"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" style="border-right: 2px solid black;">
+                5  
+            </td>
+            <td colspan="1" style="text-align: left;">
+                Wheat Khichidi
+            </td>
+            <td colspan="1">
+                <input id="pkg5" type="number">
+            </td>
+            <td colspan="1">
+                <input id="mrp5" type="number">
+            </td>
+            <td colspan="1">
+                <input id="exp5" type="date">
+            </td>
+            <td colspan="1">
+                <input id="rate5" type="number">
+            </td>
+            <td colspan="1">
+                <input id="qty5" type="number">
+            </td>
+            <td colspan="1">
+                <input id="Disk5" type="number">
+            </td>
+            <td>
+                <div id="tot5"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" style="border-right: 2px solid black;">
+                6  
+            </td>
+            <td colspan="1" style="text-align: left;">
+                Multigrain Mix With Nuts
+            </td>
+            <td colspan="1">
+                <input id="pkg6" type="number">
+            </td>
+            <td colspan="1">
+                <input id="mrp6" type="number">
+            </td>
+            <td colspan="1">
+                <input id="exp6" type="date">
+            </td>
+            <td colspan="1">
+                <input id="rate6" type="number">
+            </td>
+            <td colspan="1">
+                <input id="qty6" type="number">
+            </td>
+            <td colspan="1">
+                <input id="Disk6" type="number">
+            </td>
+            <td>
+                <div id="tot6"></div>
+            </td>
+        </tr>
+        <!-- <td colspan="1">
+                    <input id="qu1" id="myText" value="qu1" type="number">
+            </td>
+            <td colspan="1">
+                    <input id="ra1" value ="ra1" type="number">
+
+            </td>
+            <td colspan="2">
+                    <input id="di1" type="number">%
+            </td>
+            <td colspan="1">
+                <div id="amtt1">  </div>
+            </td> -->
+        <!-- <tr>
+            <td colspan="1">
+                2  
+            </td>
+            <td colspan="1">
+                <form>
+                    <select> 
+                        <option value="" selected disabled hidden>Choose</option>
+                        <option value="Apple">Apple</option>
+                        <option vlaue="Orange">Orange</option>
+                        <option value="Pineapple">Pineapple</option>
+                        <option value="jawar">jawar</option>
+                    </select>
+                </form>
+            </td>
+            <td colspan="1">
+                    <input id="qu2" value="qu2" type="number">
+            </td>
+            <td colspan="1">
+                    <input id="ra2" value ="ra2" type="number">
+
+            </td>
+            <td colspan="2">
+                    <input id="di2" type="number">%
+            </td>
+            <td colspan="1">
+                <div id="amtt2">  </div>
+            </td>
+        </tr><tr>
+            <td colspan="1">
+                3  
+            </td>
+            <td colspan="1">
+                <form>
+                    <select> 
+                        <option value="" selected disabled hidden>Choose</option>
+                        <option value="Apple">Apple</option>
+                        <option vlaue="Orange">Orange</option>
+                        <option value="Pineapple">Pineapple</option>
+                    </select>
+                </form>
+            </td>
+            <td colspan="1">
+                    <input id="qu3" value="qu3" type="number">
+            </td>
+            <td colspan="1">
+                    <input id="ra3" value ="ra3" type="number">
+
+            </td>
+            <td colspan="2">
+                    <input id="di3" type="number">%
+            </td>
+            <td colspan="1">
+                <div id="amtt3">  </div>
+            </td>
+        </tr><tr>
+            <td colspan="1">
+                4  
+            </td>
+            <td colspan="1">
+                <form>
+                    <select> 
+                        <option value="" selected disabled hidden>Choose</option>
+                        <option value="Apple">Apple</option>
+                        <option vlaue="Orange">Orange</option>
+                        <option value="Pineapple">Pineapple</option>
+                    </select>
+                </form>
+            </td>
+            <td colspan="1">
+                    <input id="qu4" value="qu4" type="number">
+            </td>
+            <td colspan="1">
+                    <input id="ra4" value ="ra4" type="number">
+
+            </td>
+            <td colspan="2">
+                    <input id="di4" type="number">%
+            </td>
+            <td colspan="1">
+                <div id="amtt4">  </div>
+            </td>
+        </tr><tr>
+            <td colspan="1">
+                5
+            </td>
+            <td colspan="1">
+                <form>
+                    <select> 
+                        <option value="" selected disabled hidden>Choose</option>
+                        <option value="Apple">Apple</option>
+                        <option vlaue="Orange">Orange</option>
+                        <option value="Pineapple">Pineapple</option>
+                    </select>
+                </form>
+            </td>
+            <td colspan="1">
+                    <input id="qu5" id="myText" value="qu5" type="number"> 
+            </td>
+            <td colspan="1">
+                    <input id="ra5" value ="ra5" type="number">
+
+            </td>
+            <td colspan="2">
+                    <input id="di5" type="number">%
+            </td>
+            <td colspan="1">
+                <div id="amtt5">  </div>
+            </td>
+        </tr> -->
+        <!-- <tr>
+            <td colspan="7" align="right">
+                <button onclick="addrow()">Add</button></td></tr>
+        <tr> -->
+        <td colspan="3" style="text-align: right;">
+                Shiping charges:-
+        </td>
+                    <td>
+                            <input type="number" id="schr">
+                    </td><td></td>
+            <!-- <td colspan="5" style="text-align: left;">
+                
+            </td> -->
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: right;">
+                Payment Mode:-
+            </td>
+            <td colspan="5" style="text-align: left;">
+                <select>
+                    <option value="" selected disabled hidden>Choose</option>
+                        <option value="Card">Card</option>
+                        <option value="Cash">cash</option>
+                        <option value="Net Banking">Net Banking</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: right;">
+                Amount given:- 
+            </td>
+            <td colspan="3" style="text-align: left;">
+                <input id="revsamt" type="number" style="text-align: left;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: right;">
+                Balance Amount:-
+    
+            </td>
+            <td colspan="3" style="text-align: left;">
+                <div id="bamt"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: right;">
+                Total :-
+            </td>
+            <td colspan="3" style="text-align: left;">
+                <div id="famt"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: right;">
+                Invoice Amount In Words - 
+            </td>
+            <td colspan="3" style="text-align: left;">
+                <span id="nwords"></span>Rupees Only/-
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <td colspan="6"></td>
+            <td style="text-align: end;">
+            <button onclick="amt()" id="Submit">Submit</button></td>
+        </td>
+            <td colspan="6"></td>
+            <td style="text-align: end;">
+            <input type = "button" value = "Print" onclick = "window.print()" />  
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6"></td>
+            <td style="text-align: end;">
+                <!-- <button onclick="ExportToExcel('xlsx'); ExportToExcel1('xlsx');">Export table to excel</button> -->
+            </td>
+        </tr>
+        </table>
+        
+        <!-- nklid="ExporttoExcel" class="show" type="button" onclick="toExcel()" value="Export to Excel">  -->
+        <table style="width: 100%;margin-left:auto;margin-right:auto;">
+        <tr>
+            <td style="text-align: left;">
+                Notes
+                <br>
+                <input id="nts" type="text" placeholder="Notes">
+                <input type="Button" value="Create File" onClick='createFile()'>
+            </td>
+            <td style="text-align: center;">
+                <pre style="text-align: left; text-indent: center;">Bank Details 
+    Name :- Moms luv
+    Amount No. :- 1145304268
+    IFSC Code :- KKBK0002037
+    Bank And Branch :- Kotak Mahindra bank,
+    Hingoli Gate, Nanded
+            </pre>
+            </td>
+            <td style="text-align: right;">
+                <br><br><br>
+                Authorised Signature for Mom's Luv.
+                
+            </td>
+        </tr>
+        
+        </table>
+
+    </body>
+</html>
+<!-- https://stackoverflow.com/questions/8060188/get-row-count-of-excel-sheet-from-javascript -->
+<!-- https://www.google.com/search?q=How+to+get+number+of+rows+in+Excel+using+JavaScript&sa=X&ved=2ahUKEwiWro-V0N_yAhUl7HMBHe_wDQUQ1QIwDXoECBcQAQ&biw=1536&bih=754 -->
+<!-- how to use excel as backend -->
+<!-- - save to text file
+- multiple rows
+- export excel
+- add row
+- Printing
+-----------------------------------------------------
+- add item
+- delete item
+- tot stock left
+- sp
+- cp
+- details of sell -->
